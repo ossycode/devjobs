@@ -1,0 +1,31 @@
+@use "../abstracts/mixins" as *;
+
+.header {
+  background-image: url(/dist/assets/desktop/bg-pattern-header.svg);
+  background-repeat: no-repeat;
+  //   background-size: cover;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 16.7rem;
+  padding: 0px 16.7rem;
+
+  &__logo {
+    margin-top: -4.5rem;
+  }
+
+  &__theme-control {
+    margin-top: -5.1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.6rem;
+  }
+
+  &__sun,
+  &__moon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}

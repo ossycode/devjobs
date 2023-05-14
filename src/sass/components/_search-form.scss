@@ -1,0 +1,157 @@
+.search-form {
+  width: 113rem;
+  height: 8rem;
+  background-color: var(--color-white);
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  // justify-content: center;
+  border-radius: 0.6rem;
+  padding: 0px 1.6rem 0px 3.2rem;
+  transform: translateY(-55%);
+
+  &__group {
+    display: flex;
+    align-items: center;
+    // justify-content: center;
+
+    label {
+      display: flex;
+      align-items: center;
+    }
+    input {
+      border: none;
+      outline: none;
+      border-right: 1px solid rgba(#6e8098, 0.2);
+      // padding: 0px 2rem;
+
+      &::-webkit-search-decoration,
+      &::-webkit-search-cancel-button,
+      *::-webkit-search-results-button,
+      &::-webkit-search-results-decoration {
+        display: none;
+      }
+
+      &::-ms-reveal,
+      &::-ms-clear {
+        display: none;
+        width: 0;
+        height: 0;
+      }
+
+      &::placeholder {
+        font-family: "Kumbh Sans", sans-serif;
+        color: var(--color-blue-dark);
+        font-weight: 400;
+        font-size: 1.61rem;
+        line-height: 2rem;
+        opacity: 0.5;
+        padding: 0px 0.5rem;
+        margin-bottom: 1.5rem;
+        transform: translateY(10%);
+      }
+    }
+  }
+
+  &__others {
+    width: 45rem;
+
+    // flex: 0 0 47%;
+    // padding: 0px 3rem;
+    input {
+      width: 45rem;
+      height: 8rem;
+      padding: 0px 1rem;
+    }
+  }
+  &__location {
+    width: 31rem;
+    padding: 0px 2rem;
+
+    input {
+      width: 31rem;
+      height: 8rem;
+      padding: 0px 1rem;
+    }
+  }
+  &__btn {
+    // margin-left: 4rem;
+    // justify-self: flex-end;
+  }
+
+  // &__fulltime {
+  //   width: 20.6rem;
+  //   padding: 2rem 0px;
+  //   // margin-left: 2rem;
+  //   // margin: auto;
+  // }
+
+  &__fulltime {
+    width: 20.6rem;
+    font-weight: 700;
+    font-size: 1.6rem;
+    line-height: 2rem;
+    color: var(--color-blue-dark);
+    display: block;
+    position: relative;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    padding-left: 5rem;
+
+    label {
+      margin-top: 0.5rem;
+    }
+    input {
+      position: absolute;
+      opacity: 0;
+      cursor: pointer;
+      height: 0;
+      width: 0;
+
+      &:checked ~ .checkmark {
+        background-color: var(--color-violet-normal);
+        opacity: 1;
+      }
+
+      &:checked ~ .checkmark::after {
+        display: block;
+      }
+    }
+  }
+
+  &__search-icon {
+    height: 2.4rem;
+    width: 2.4rem;
+    fill: var(--color-violet-normal);
+  }
+
+  &__location-icon {
+    height: 2.4rem;
+    width: 1.7rem;
+    fill: var(--color-violet-normal);
+  }
+}
+
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 1rem;
+  width: 2.5rem;
+  height: 2.5rem;
+  background-color: var(--color-blue-dark);
+  opacity: 0.1;
+  border-radius: 0.3rem;
+  cursor: pointer;
+  transition: all 0.2s;
+
+  &::after {
+    content: url(/dist/assets/desktop/icon-check.svg);
+    position: absolute;
+    left: 0.5rem;
+    top: 0.2rem;
+    display: none;
+  }
+}

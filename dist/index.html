@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+    <script type="module" src="bundle.js" defer></script>
+
+
+    <title>DevJobs Board</title>
+</head>
+
+<body>
+    <header class="header">
+        <img class="header__logo" src="/dist/assets/desktop/logo.svg" alt="a logo of devjobs">
+
+        <div class="header__theme-control">
+            <div class="header__sun"> <img src="/dist/assets/desktop/icon-sun.svg" alt="An icom of the sun"> </div>
+            <div class="theme-slider-container">
+                <label for="header-checkbox" class="theme-slider-container__label">
+                    <input type="checkbox" name="header-checkbox" id="header-checkbox" />
+                    <div class="theme-slider-container__slider round"></div>
+                </label>
+
+            </div>
+
+            <div header__moon> <img src="/dist/assets/desktop/icon-moon.svg" alt="An icom of the moon"></div>
+        </div>
+    </header>
+
+    <form class="search-form" action="">
+
+        <div class="search-form__group search-form__others">
+            <label for="other_filter" class="search-form__label search-form__label-others">
+
+                <svg role="img" class="search-form__search-icon">
+                    <title id="serach-label">This is the search label icon</title>
+                    <use xlink:href="/dist/assets/desktop/icon-search.svg#icon-magnifying-glass"></use>
+                </svg>
+
+            </label>
+
+            <input type="search" name="other_filter" id="other_filter"
+                placeholder="Filter by title, companies, expertise..." aria-labelledby="serach-label">
+
+        </div>
+
+        <div class="search-form__group search-form__location">
+            <label for="other_filter" class="search-form__label search-form__label-location">
+
+                <svg role="img" class="search-form__location-icon">
+                    <title id="location-label">This is the location label icon</title>
+                    <use xlink:href="/dist/assets/desktop/icon-location.svg#icon-location"></use>
+                </svg>
+
+            </label>
+
+            <input type="search" name="location_filter" id="location_filter" placeholder="Filter by location..."
+                aria-labelledby="location-label">
+        </div>
+
+
+        <div class="search-form__group search-form__fulltime ">
+            <label for="form-checkbox" class="search-form__label search-form__label-fulltime">
+                Full Time Only
+                <input type="checkbox" name="form-checkbox" id="form-checkbox">
+                <span class="checkmark"></span>
+
+            </label>
+        </div>
+
+        <button type="submit" class="btn-1  mg-left search-form__btn">Search</button>
+
+
+    </form>
+
+</body>
+
+
+</html>
