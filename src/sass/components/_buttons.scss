@@ -15,4 +15,9 @@
   line-height: 2rem;
   text-align: center;
   cursor: pointer;
+  font-style: normal;
+
+  &:hover {
+    background-color: var(--color-violet-light);
+  }
 }

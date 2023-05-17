@@ -1,0 +1,63 @@
+.spinner_b2T7 {
+  animation: spinner_xe7Q 0.8s linear infinite;
+}
+
+.spinner_YRVV {
+  animation-delay: -0.65s;
+}
+
+.spinner_c9oY {
+  animation-delay: -0.5s;
+}
+
+@keyframes spinner_xe7Q {
+  93.75%,
+  100% {
+    r: 3px;
+  }
+
+  46.875% {
+    r: 0.2px;
+  }
+}
+
+.spinner {
+  opacity: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  // position: fixed;
+  bottom: 5rem;
+  transition: opacity 0.3s ease-in;
+  padding: 7rem 0px 4rem 0px;
+
+  &.show {
+    opacity: 1;
+  }
+
+  &__cirle {
+    background-color: var(--color-form-label-text);
+    width: 1rem;
+    height: 1rem;
+    border-radius: 50%;
+    margin: 0.5rem;
+    animation: bounce 0.5s ease-in infinite;
+
+    &:nth-of-type(2) {
+      animation-delay: 0.1s;
+    }
+    &:nth-of-type(2) {
+      animation-delay: 0.2s;
+    }
+  }
+}
+
+@keyframes bounce {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-1rem);
+  }
+}

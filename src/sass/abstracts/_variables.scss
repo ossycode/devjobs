@@ -1,4 +1,5 @@
-:root {
+:root,
+:root.light {
   // Colors
   --color-violet-normal: #5964e0;
   --color-violet-light: #939bf4;
@@ -8,5 +9,34 @@
   --color-grey-light: #f4f6f8;
   --color-grey-normal: #9daec2;
   --color-grey-dark: #6e8098;
+  --color-white: #ffffff;
+
+  // light mode
   --color-bg: #f2f2f2;
+  --color-search-form-bg: #ffffff;
+  --color-search-input-bg: #ffffff;
+  --color-search-input-text: #19202d;
+  --color-form-label-text: #19202d;
+  --color-input-placeholder: #19202d;
+  --checkmark-bg: #19202d;
+  --color-jobcard-title: #19202d;
+  --jobcard-bg: #ffffff;
+  // --color-jobcard-title-hover: #6e8098;
+}
+
+:root.dark {
+  // Dark mode
+  --color-bg: #121721;
+  --color-search-form-bg: #19202d;
+  --color-search-input-bg: #19202d;
+  --color-search-input-text: #ffffff;
+  --color-form-label-text: #ffffff;
+  --color-jobcard-title: #ffffff;
+  --color-input-placeholder: #ffffff;
+  --jobcard-bg: #19202d;
+  // --color-jobcard-title-hover: #6e8098;
+  --checkmark-bg: #ffffff;
+}
+
+@media (prefers-color-scheme: dark) {
 }

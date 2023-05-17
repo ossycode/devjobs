@@ -1,7 +1,7 @@
 .search-form {
   width: 113rem;
   height: 8rem;
-  background-color: var(--color-white);
+  background-color: var(--color-search-form-bg);
   margin: 0 auto;
   display: flex;
   align-items: center;
@@ -23,7 +23,14 @@
       border: none;
       outline: none;
       border-right: 1px solid rgba(#6e8098, 0.2);
-      // padding: 0px 2rem;
+      font-family: "Kumbh Sans", sans-serif;
+      font-weight: 400;
+      font-size: 1.6rem;
+      line-height: 2rem;
+      color: var(--color-search-input-text);
+      background-color: var(--color-search-input-bg);
+      cursor: pointer;
+      // padding: 0px 3rem;
 
       &::-webkit-search-decoration,
       &::-webkit-search-cancel-button,
@@ -41,13 +48,13 @@
 
       &::placeholder {
         font-family: "Kumbh Sans", sans-serif;
-        color: var(--color-blue-dark);
+        color: var(--color-input-placeholder);
         font-weight: 400;
         font-size: 1.61rem;
         line-height: 2rem;
         opacity: 0.5;
-        padding: 0px 0.5rem;
-        margin-bottom: 1.5rem;
+        padding: 0px 1rem;
+        margin-bottom: 0.5rem;
         transform: translateY(10%);
       }
     }
@@ -91,7 +98,7 @@
     font-weight: 700;
     font-size: 1.6rem;
     line-height: 2rem;
-    color: var(--color-blue-dark);
+    color: var(--color-form-label-text);
     display: block;
     position: relative;
     cursor: pointer;
@@ -141,7 +148,7 @@
   left: 1rem;
   width: 2.5rem;
   height: 2.5rem;
-  background-color: var(--color-blue-dark);
+  background-color: var(--checkmark-bg);
   opacity: 0.1;
   border-radius: 0.3rem;
   cursor: pointer;

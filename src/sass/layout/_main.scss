@@ -1,1 +1,22 @@
 @use "../abstracts/mixins" as *;
+
+.main {
+  margin-top: 6rem;
+}
+
+.loadmore {
+  padding: 5.6rem 0px 12rem 0px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &__btn {
+    width: 14.1rem;
+    opacity: 1;
+    transform: opacity 0.2s ease-in;
+
+    &.hide {
+      opacity: 0;
+    }
+  }
+}
