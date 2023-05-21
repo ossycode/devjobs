@@ -10,6 +10,10 @@
   height: 16.7rem;
   padding: 0px 16.7rem;
 
+  &__link {
+    cursor: pointer;
+  }
+
   &__logo {
     margin-top: -4.5rem;
   }

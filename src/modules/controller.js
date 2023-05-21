@@ -2,6 +2,7 @@ import { async } from "regenerator-runtime";
 import * as model from "./model";
 import jobcardsViews from "./views/jobcardsViews";
 import paginationView from "./views/paginationView";
+import searchView from "./views/searchView";
 
 const controlJobcards = async function () {
   try {
@@ -24,12 +25,33 @@ const controlPagination = async function () {
 
     // Render the jobs on the next display list when the load more button is clicked
     setTimeout(function () {
-      paginationView.render(model.state.nextDisplay);
-      model.checkJobList();
-      paginationView.hideShowMoreBtn(model.state.nextDisplay);
+      if (model.state.search.isFiltering) {
+        paginationView.render(model.state.search.nextDisplay);
+        model.checkJobList();
+        paginationView.hideShowMoreBtn(model.state.search.nextDisplay);
+      } else {
+        paginationView.render(model.state.nextDisplay);
+        model.checkJobList();
+        paginationView.hideShowMoreBtn(model.state.nextDisplay);
+      }
     }, 1500);
   } catch (error) {
     paginationView.renderError();
+  }
+};
+
+const controlSearch = async function (query) {
+  // Get search query
+  // const query = searchView.getQuery();
+  // if (!query) return;
+  try {
+    model.initialisedState();
+    model.filterJobs(query);
+
+    searchView.render(model.state.search.nextDisplay);
+    paginationView.hideShowMoreBtn(model.state.search.nextDisplay);
+  } catch (error) {
+    searchView.renderError();
   }
 };
 
@@ -37,6 +59,7 @@ const controlPagination = async function () {
 const init = function () {
   jobcardsViews.addHandlerRender(controlJobcards);
   paginationView.addHandlerClick(controlPagination);
+  searchView.addHandlerSubmit(controlSearch);
 };
 
 init();

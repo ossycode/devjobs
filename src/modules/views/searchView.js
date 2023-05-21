@@ -1,37 +1,37 @@
-import View from "./View";
 import * as domEl from "../dom-elements";
+import View from "./View";
 
-class PaginationView extends View {
-  _loadMoreBtn = domEl.loadMoreBtn;
+class SearchView extends View {
   _parentElement = domEl.jobcardsContainer;
-  _spinner = domEl.spinner;
+  _errorMessage = "No Job found for your query! Please try again";
+  _searchForm = domEl.searchForm;
+  _loadMoreBtn = domEl.loadMoreBtn;
 
-  addHandlerClick(handler) {
-    this._loadMoreBtn.addEventListener("click", handler);
+  addHandlerSubmit(handler) {
+    this._searchForm.addEventListener("submit", function (e) {
+      // console.log(this._locationInput);
+
+      e.preventDefault();
+      //   this._locationInput = " ";
+
+      const rawData = [...new FormData(this)];
+      const data = Object.fromEntries(rawData);
+      domEl.searchForm.reset();
+      handler(data);
+    });
   }
-  // Render more jobs to the DOM
+
   render(data) {
+    if (!data || (Array.isArray(data) && data.length === 0)) {
+      this._loadMoreBtn.classList.add("hide");
+      return this.renderError();
+    }
     this._data = data;
-    if (!data || (Array.isArray(data) && data.length === 0)) return;
     const markup = this._generateMarkup();
+    this._clear();
     this._parentElement.insertAdjacentHTML("beforeend", markup);
   }
 
-  renderSpinner() {
-    this._spinner.classList.add("show");
-    setTimeout(() => {
-      this._spinner.classList.remove("show");
-    }, 1000);
-  }
-
-  // Hide the Show more button when all the jobs are displayed
-  hideShowMoreBtn(data) {
-    if (data.length === 0) {
-      this._loadMoreBtn.classList.add("hide");
-    } else {
-      this._loadMoreBtn.classList.remove("hide");
-    }
-  }
   _generateMarkup() {
     return this._data.map(this._generateMarkupJobs).join("");
   }
@@ -55,4 +55,4 @@ class PaginationView extends View {
   }
 }
 
-export default new PaginationView();
+export default new SearchView();
