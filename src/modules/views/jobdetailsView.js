@@ -28,10 +28,10 @@ class JobcardsViews extends View {
   _generateMarkupJob(result) {
     return `    <header class="header">
     <a class="header__link" href="/dist/index.html" aria-label="Devjobs header logo"> <img class="header__logo"
-            src="/dist/assets/desktop/logo.svg" alt=" Devjobs logo - home page"></a>
+            src="./assets/desktop/logo.svg" alt=" Devjobs logo - home page"></a>
 
     <div class="header__theme-control">
-        <div class="header__sun"> <img src="/dist/assets/desktop/icon-sun.svg" alt="An icom of the sun"> </div>
+        <div class="header__sun"> <img src="./assets/desktop/icon-sun.svg" alt="An icon of the sun"> </div>
         <div class="theme-slider-container">
             <label for="header-checkbox" class="theme-slider-container__label">
                 <input type="checkbox" name="header-checkbox" id="header-checkbox" />
@@ -40,7 +40,7 @@ class JobcardsViews extends View {
 
         </div>
 
-        <div header__moon> <img src="/dist/assets/desktop/icon-moon.svg" alt="An icom of the moon"></div>
+        <div header__moon> <img src="./assets/desktop/icon-moon.svg" alt="An icon of the moon"></div>
     </div>
 </header>
 
