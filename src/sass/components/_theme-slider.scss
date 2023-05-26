@@ -21,12 +21,13 @@
 
   &__slider {
     background-color: var(--color-white);
-    // bottom: 0;
     cursor: pointer;
-    // left: 0;
-    // position: absolute;
-    // right: 0;
-    // top: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    position: absolute;
+
     transition: all 0.4s;
 
     &::before {

@@ -25,7 +25,7 @@
             <div class="theme-slider-container">
                 <label for="header-checkbox" class="theme-slider-container__label">
                     <input type="checkbox" name="header-checkbox" id="header-checkbox" />
-                    <p class="theme-slider-container__slider round"></p>
+                    <span class="theme-slider-container__slider round"></span>
                 </label>
 
             </div>
@@ -33,21 +33,22 @@
             <img class="header__moon" src="./assets/desktop/icon-moon.svg" alt="An icon of the moon">
         </div>
     </header>
-    <h1></h1>
+    <h1 class="hidden-h1">DevJobs</h1>
     <form class="search-form" action="#">
 
         <div class="search-form__group search-form__others">
             <label for="other_filter" class="search-form__label search-form__label-others">
 
                 <button type="submit" class="search-form__search-iconBtn"><svg role="img"
-                        class="search-form__search-icon" id="other_filterBtn">
+                        class="search-form__search-icon" id="other_filter">
                         <title id="serach-label">This is the search label icon</title>
                         <use xlink:href="./assets/desktop/icon-search.svg#icon-magnifying-glass"></use>
                     </svg>
                 </button>
 
             </label>
-            <input type="search" name="other_filter" id="other_filter" placeholder="" aria-labelledby="serach-label">
+            <input id="other_filter" type="search" name="other_filter" class="other_filterInput" placeholder=""
+                aria-labelledby="serach-label">
 
 
             <svg role="img" class="mobile-form__search-filter" width="20" height="20" aria-labelledby="search-label"
