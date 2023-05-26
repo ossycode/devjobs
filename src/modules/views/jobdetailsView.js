@@ -27,7 +27,7 @@ class JobcardsViews extends View {
 
   _generateMarkupJob(result) {
     return `    <header class="header">
-    <a class="header__link" href="/dist/index.html" aria-label="Devjobs header logo"> <img class="header__logo"
+    <a class="header__link" href="/index.html" aria-label="Devjobs header logo"> <img class="header__logo"
             src="./assets/desktop/logo.svg" alt=" Devjobs logo - home page"></a>
 
     <div class="header__theme-control">
