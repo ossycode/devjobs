@@ -33,6 +33,7 @@
     input {
       border: none;
       outline: none;
+      height: 100%;
       border-right: 1px solid rgba(#6e8098, 0.2);
       font-family: "Kumbh Sans", sans-serif;
       font-weight: 400;
@@ -41,7 +42,7 @@
       color: var(--color-search-input-text);
       background-color: var(--color-search-input-bg);
       cursor: pointer;
-      // padding: 0px 3rem;
+      // padding: 0rem 3rem 10rem 2rem;
 
       &::-webkit-search-decoration,
       &::-webkit-search-cancel-button,
@@ -64,9 +65,9 @@
         font-size: 1.61rem;
         line-height: 2rem;
         opacity: 0.5;
-        padding: 0px 0.5rem;
-        margin-bottom: 0.5rem;
-        transform: translateY(10%);
+        padding: 0px 0.2rem;
+        // margin-bottom: 2rem;
+        transform: translateY(-10%);
 
         @include respond(phone) {
           padding: 0px;
@@ -118,7 +119,11 @@
   }
   &__location {
     width: 31rem;
-    padding: 0px 1rem;
+    padding: 0px 2rem;
+
+    @include respond(tab-land) {
+      padding: 0px 1rem;
+    }
 
     @include respond(phone) {
       display: none;
@@ -126,7 +131,7 @@
 
     input {
       width: 30rem;
-      height: 8rem;
+      height: 100%;
       padding: 0px 1rem;
 
       @include respond(tab-port) {
@@ -189,7 +194,7 @@
   }
 
   &__location-icon {
-    height: 3rem;
+    height: 2.7rem;
     width: 2.4rem;
     fill: var(--color-violet-normal);
 
