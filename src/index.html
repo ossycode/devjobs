@@ -25,22 +25,22 @@
             <div class="theme-slider-container">
                 <label for="header-checkbox" class="theme-slider-container__label">
                     <input type="checkbox" name="header-checkbox" id="header-checkbox" />
-                    <div class="theme-slider-container__slider round"></div>
+                    <p class="theme-slider-container__slider round"></p>
                 </label>
 
             </div>
 
-            <div header__moon> <img src="./assets/desktop/icon-moon.svg" alt="An icon of the moon"></div>
+            <img class="header__moon" src="./assets/desktop/icon-moon.svg" alt="An icon of the moon">
         </div>
     </header>
-
-    <form class="search-form" action="">
+    <h1></h1>
+    <form class="search-form" action="#">
 
         <div class="search-form__group search-form__others">
             <label for="other_filter" class="search-form__label search-form__label-others">
 
                 <button type="submit" class="search-form__search-iconBtn"><svg role="img"
-                        class="search-form__search-icon">
+                        class="search-form__search-icon" id="other_filterBtn">
                         <title id="serach-label">This is the search label icon</title>
                         <use xlink:href="./assets/desktop/icon-search.svg#icon-magnifying-glass"></use>
                     </svg>
@@ -48,6 +48,8 @@
 
             </label>
             <input type="search" name="other_filter" id="other_filter" placeholder="" aria-labelledby="serach-label">
+
+
             <svg role="img" class="mobile-form__search-filter" width="20" height="20" aria-labelledby="search-label"
                 xmlns="http://www.w3.org/2000/svg" id="mobileFilter">
                 <title id="search-label">This is the search label icon</title>
@@ -90,71 +92,7 @@
 
     <main class="main">
         <div class="jobcards-container">
-            <!-- <div class="jobcard">
-                <div class="jobcard__logo">
-                    <img src="/dist/assets/logos/pomodoro.svg" alt="Logo of the company adversiting the job">
-                </div>
-                <div class="jobcard__timeAndType">
-                    <p class="jobcard__posted">5h ago</p>
-                    <span>&#x2022;</span>
-                    <p class="jobcard__jobType">Full Time</p>
-                </div>
-                <a class="heading__3 jobcard__title " href="#" aria-label="Learn more about the job">Senior Software
-                    Engineer</a>
-                <p class="jobcard__company">Scoot</p>
 
-                <p class="jobcard__country">United Kingdom</p>
-
-
-
-
-
-
-            </div>
-
-
-            <div class="jobcard">
-                <img src="" alt="Logo of the company adversiting the job">
-                <div class="jobcard__timeAndType">
-                    <p class="jobcard__posted">5h ago</p>
-                    <span>&#x2022;</span>
-                    <p class="jobcard__jobType">Full Time</p>
-                </div>
-                <h1 class="heading__3 jobcard__title ">Senior Software Engineer</h1>
-                <p class="jobcard__company">Scoot</p>
-
-                <p class="jobcard__country">United Kingdom</p>
-            </div>
-
-
-            <div class="jobcard">
-                <div class="jobcard__logo">
-                    <img src="/dist/assets/logos/scoot.svg" alt="Logo of the company adversiting the job">
-                </div>
-                <div class="jobcard__timeAndType">
-                    <p class="jobcard__posted">5h ago</p>
-                    <span>&#x2022;</span>
-                    <p class="jobcard__jobType">Full Time</p>
-                </div>
-                <h1 class="heading__3 jobcard__title ">Senior Software Engineer</h1>
-                <p class="jobcard__company">Scoot</p>
-
-                <p class="jobcard__country">United Kingdom</p>
-            </div>
-
-            <div class="jobcard">
-                <img src="" alt="Logo of the company adversiting the job">
-                <div class="jobcard__timeAndType">
-                    <p class="jobcard__posted">5h ago</p>
-                    <span>&#x2022;</span>
-                    <p class="jobcard__jobType">Full Time</p>
-                </div>
-                <a class="heading__3 jobcard__title " href="#" aria-label="Learn more about the job">Senior Software
-                    Engineer</a>
-                <p class="jobcard__company">Scoot</p>
-
-                <p class="jobcard__country">United Kingdom</p>
-            </div> -->
         </div>
 
         <div class="spinner">
@@ -171,14 +109,14 @@
     <div id="modal-container" class="modal">
 
 
-        <form class="modal-content mobile-form" action="">
+        <form class="modal-content mobile-form" action="#">
 
             <label for="mobileForm_filter" class="mobile-form__label-location">
 
                 <img class="mobile-form__location-icon" src="./assets/desktop/icon-location.svg"
                     alt="location search label icon">
-                <input type="search" name="mobileForm_filter" id="mobileForm_filter" placeholder="Filter by location..."
-                    aria-labelledby="mobileForm">
+                <input type="search" name="mobileForm_filter" id="mobileForm_filter"
+                    placeholder="Filter by location...">
             </label>
 
             <div class="mobile-form__bottom-div">

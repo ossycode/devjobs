@@ -24,7 +24,7 @@ class JobcardsViews extends View {
   }
 
   _generateMarkupJobs(result) {
-    return ` <div class="jobcard" ">
+    return ` <div class="jobcard">
     <div class="jobcard__logo" style="background-color: ${result.logoBackground}">
     <img src="${result.logo}" alt="the company adversiting the job">
     </div>
