@@ -26,7 +26,8 @@ class PaginationView extends View {
 
   // Hide the Show more button when all the jobs are displayed
   hideShowMoreBtn(data) {
-    if (data.length === 0) {
+    this._data = data;
+    if (this._data.length === 0) {
       this._loadMoreBtn.classList.add("hide");
     } else {
       this._loadMoreBtn.classList.remove("hide");
@@ -46,7 +47,7 @@ class PaginationView extends View {
     <span>&#x2022;</span>
     <p class="jobcard__jobType">${result.contract}</p>
     </div>
-    <a class="heading__3 jobcard__title " href="#" aria-label="Learn more about the job">${result.position}</a>
+    <a class="heading__3 jobcard__title " href="#" aria-label="Learn more about the job" data-id="${result.id}">${result.position}</a>
     <p class="jobcard__company">${result.company}</p>
     
     <p class="jobcard__country">${result.location}</p>

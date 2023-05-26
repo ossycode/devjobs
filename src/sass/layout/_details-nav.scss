@@ -1,0 +1,105 @@
+@use "../abstracts/mixins" as *;
+
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4rem;
+  width: 74rem;
+  height: 14rem;
+  margin: 0 auto;
+  border-radius: 0.6rem;
+  background-color: var(--jobcard-bg);
+  transform: translateY(-35%);
+
+  @include respond(tab-land) {
+    width: 90%;
+  }
+
+  @include respond(phone) {
+    width: 90%;
+    flex-direction: column;
+    height: 22rem;
+    transform: translateY(-10%);
+    gap: 2.5rem;
+    padding: 0rem 2rem 6rem 2rem;
+  }
+
+  &__company {
+    width: 14rem;
+    color: var(--color-white);
+    background-color: hsl(36, 87%, 49%);
+    align-self: stretch;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom-left-radius: 0.6rem;
+
+    @include respond(phone) {
+      width: 5rem;
+      height: 5rem;
+      align-self: center;
+      padding: 3rem;
+      border-radius: 1.5rem;
+    }
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.7rem;
+
+    @include respond(phone) {
+      text-align: center;
+      gap: 1rem;
+    }
+  }
+
+  &__title {
+    color: var(--color-jobcard-title);
+  }
+
+  &__website {
+    color: var(--color-grey-dark);
+    line-height: 2rem;
+    font-weight: 400;
+    text-transform: lowercase;
+  }
+
+  &__website-link {
+    // background-color: var(--color-violet-normal);
+    width: 14.7rem;
+    height: 4.8rem;
+    color: var(--company-color-text);
+    border-radius: 0.5rem;
+    margin: auto;
+    text-align: center;
+    padding: 1.4rem 1rem;
+    background: var(--company-color-bg);
+    transform: all 0.2s;
+    margin-right: 5rem;
+
+    @include respond(phone) {
+      margin: 0 auto;
+      padding: 1rem;
+    }
+
+    a {
+      text-decoration: none;
+      color: var(--company-color-text);
+      font-weight: 700;
+      font-size: 1.6rem;
+      line-height: 1.9rem;
+      padding: 1rem;
+      //   color: black;
+
+      @include respond(phone) {
+      }
+    }
+
+    &:hover {
+      background: var(--company-color-hover);
+      padding: 1.2rem 1rem;
+    }
+  }
+}

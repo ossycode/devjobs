@@ -3,6 +3,7 @@ import { RESQUEST_PER_PAGE } from "./config";
 import jobdata from "../../data.json";
 
 export const state = {
+  job: {},
   currentDisplay: [],
   nextDisplay: [],
   resultsPerPage: RESQUEST_PER_PAGE,
@@ -36,15 +37,23 @@ export const loadMoreJob = async function () {
         state.search.nextDisplay
       );
       state.search.nextDisplay.map((job) => returnedData(job));
+    } else {
+      state.currentDisplay = state.currentDisplay.concat(state.nextDisplay);
+      state.nextDisplay.map((job) => returnedData(job));
     }
-    state.currentDisplay = state.currentDisplay.concat(state.nextDisplay);
-    state.nextDisplay.map((job) => returnedData(job));
+    checkJobList();
   } catch (error) {
-    s;
     throw error;
   }
 };
 
+export const getAJobObject = async function (data) {
+  state.jobdata.filter((job) => {
+    if (job.id === data) {
+      state.job = job;
+    }
+  });
+};
 // Get the jobs remaining on the list
 // If no more jobs, the show more button will be hidden
 export const checkJobList = async function () {
@@ -69,6 +78,12 @@ export const checkJobList = async function () {
 export const filterJobs = async function (data) {
   try {
     state.search.isFiltering = true;
+    if (data.location_filter.toLowerCase() === "us") {
+      data.location_filter = "united states";
+    }
+    if (data.location_filter.toLowerCase() === "uk") {
+      data.location_filter = "united kingdom";
+    }
 
     // filter jobs if all the fields are not empty
     if (
@@ -160,6 +175,39 @@ export const filterJobs = async function (data) {
   }
 };
 
+export const mobileFormFilter = async function (data) {
+  try {
+    state.search.isFiltering = true;
+    if (data.mobileForm_filter.toLowerCase() === "us") {
+      data.mobileForm_filter = "united states";
+    }
+    if (data.mobileForm_filter.toLowerCase() === "uk") {
+      data.mobileForm_filter = "united kingdom";
+    }
+    if (data.mobileForm_filter !== "" && data.mobile_checkbox === "on") {
+      state.search.results = state.jobdata.filter(
+        (job) => _checkMobileLocation(data, job) && _checkForContractType(job)
+      );
+    }
+
+    if (data.mobileForm_filter !== "" && data.mobile_checkbox !== "on") {
+      state.search.results = state.jobdata.filter((job) =>
+        _checkMobileLocation(data, job)
+      );
+    }
+
+    if (data.mobileForm_filter === "" && data.mobile_checkbox === "on") {
+      state.search.results = state.jobdata.filter((job) =>
+        _checkForContractType(job)
+      );
+    }
+    checkJobList();
+    state.search.nextDisplay.map((job) => returnedData(job));
+  } catch (error) {
+    throw error;
+  }
+};
+
 const returnedData = function (job) {
   return {
     id: job.id,
@@ -201,6 +249,13 @@ const _checkForLocation = function (data, job) {
 
 const _checkForContractType = function (job) {
   const jobs = job.contract.toLowerCase() === "full time";
+
+  return jobs;
+};
+
+const _checkMobileLocation = function (data, job) {
+  const jobs =
+    data.mobileForm_filter.toLowerCase() === job.location.toLowerCase();
 
   return jobs;
 };

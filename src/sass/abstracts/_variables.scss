@@ -12,6 +12,7 @@
   --color-white: #ffffff;
 
   // light mode
+  --color-mobile-filter: #6e8098;
   --color-bg: #f2f2f2;
   --color-search-form-bg: #ffffff;
   --color-search-input-bg: #ffffff;
@@ -21,11 +22,16 @@
   --checkmark-bg: #19202d;
   --color-jobcard-title: #19202d;
   --jobcard-bg: #ffffff;
+  --distails-about: #6e8098;
+  --company-color-bg: rgba(89, 100, 224, 0.1);
+  --company-color-text: #5964e0;
+  --company-color-hover: rgba(89, 100, 224, 0.35);
   // --color-jobcard-title-hover: #6e8098;
 }
 
 :root.dark {
   // Dark mode
+  --color-mobile-filter: #ffffff;
   --color-bg: #121721;
   --color-search-form-bg: #19202d;
   --color-search-input-bg: #19202d;
@@ -34,9 +40,13 @@
   --color-jobcard-title: #ffffff;
   --color-input-placeholder: #ffffff;
   --jobcard-bg: #19202d;
+  --distails-about: #9daec2;
   // --color-jobcard-title-hover: #6e8098;
   --checkmark-bg: #ffffff;
+  --company-color-bg: rgba(255, 255, 255, 0.1);
+  --company-color-text: #ffffff;
+  --company-color-hover: rgba(255, 255, 255, 0.25);
 }
 
-@media (prefers-color-scheme: dark) {
-}
+// @media (prefers-color-scheme: dark) {
+// }

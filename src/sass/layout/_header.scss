@@ -3,27 +3,60 @@
 .header {
   background-image: url(/dist/assets/desktop/bg-pattern-header.svg);
   background-repeat: no-repeat;
-  //   background-size: cover;
+  // background-size: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
   height: 16.7rem;
-  padding: 0px 16.7rem;
+  padding: 0rem 16.7rem;
+
+  @include respond(tab-land) {
+    width: 100%;
+    height: 19rem;
+    padding: 0rem 6rem;
+  }
+
+  @include respond(tab-port) {
+    padding: 0px 5rem;
+  }
+
+  @include respond(phone) {
+    background-image: url(/dist/assets/mobile/bg-pattern-header.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 0px 2rem;
+  }
 
   &__link {
     cursor: pointer;
+    margin-top: -4.1rem;
+
+    @include respond(tab-port) {
+      margin-top: -3.3rem;
+    }
+
+    @include respond(phone) {
+      margin-top: -6rem;
+    }
   }
 
   &__logo {
-    margin-top: -4.5rem;
   }
 
   &__theme-control {
-    margin-top: -5.1rem;
+    margin-top: -5.5rem;
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 1.6rem;
+
+    @include respond(tab-port) {
+      margin-top: -3.5rem;
+    }
+
+    @include respond(phone) {
+      margin-top: -6rem;
+    }
   }
 
   &__sun,

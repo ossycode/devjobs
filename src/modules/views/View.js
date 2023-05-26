@@ -16,7 +16,7 @@ export default class View {
 
   renderError(message = this._errorMessage) {
     const errorMarkup = `<div class="error heading__2">
-        <p>${message}</p>
+        <p class="error__text">${message}</p>
       </div>`;
     this._clear();
     this._parentElement.insertAdjacentHTML("beforeend", errorMarkup);

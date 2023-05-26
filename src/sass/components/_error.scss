@@ -1,8 +1,15 @@
+@use "../abstracts/mixins" as *;
+
 .error {
   width: 50rem;
   margin: 0 auto;
-  background-color: var(--color-bg);
-  color: var(--color-form-label-text);
+  background-color: var(--color-search-form-bg);
+  color: var(--color-mobile-filter);
   text-align: center;
-  border-radius: 6rem;
+  border-radius: 0.6rem;
+  padding: 6rem;
+
+  @include respond(tab-land) {
+    width: 80%;
+  }
 }

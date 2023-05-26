@@ -1,25 +1,41 @@
+@use "../abstracts/mixins" as *;
+
 .jobcards-container {
   width: 113rem;
   margin: 0 auto;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(35rem, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(35rem, 1fr));
   gap: 6.5rem 3rem;
   transition: all 0.2 ease-in;
+
+  @include respond(tab-land) {
+    width: 90%;
+    grid-template-columns: repeat(auto-fill, minmax(30rem, 1fr));
+    gap: 6rem 1.1rem;
+  }
+
+  @include respond(phone) {
+    width: 85%;
+    margin-top: -4rem;
+  }
 }
 
 .jobcard {
   background-color: var(--jobcard-bg);
-  width: 35rem;
+  max-width: 35rem;
   height: 22.8rem;
   display: flex;
   flex-direction: column;
   padding: 0px 3rem;
   border-radius: 0.6rem;
 
+  @include respond(tab-land) {
+    max-width: none;
+  }
+
   &__logo {
     width: 5rem;
     height: 5rem;
-    // background-color: hsl(254, 71%, 45%);
     border-radius: 1.5rem;
     display: flex;
     align-items: center;
@@ -28,16 +44,11 @@
   }
 
   img {
-    // width: 100%;
-    // width: 5rem;
-    // height: 5rem;
     display: block;
-    // background-size: cover;
   }
 
   &__timeAndType {
     display: flex;
-    // justify-content: center;
     align-items: center;
     gap: 1rem;
     margin-bottom: 1.3rem;
@@ -52,6 +63,7 @@
 
   &__title {
     margin-bottom: 1.2rem;
+    width: max-content;
     color: var(--color-jobcard-title);
 
     &:link,

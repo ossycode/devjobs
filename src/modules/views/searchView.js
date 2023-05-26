@@ -6,18 +6,27 @@ class SearchView extends View {
   _errorMessage = "No Job found for your query! Please try again";
   _searchForm = domEl.searchForm;
   _loadMoreBtn = domEl.loadMoreBtn;
+  _mobileSearchForm = domEl.mobileForm;
 
   addHandlerSubmit(handler) {
     this._searchForm.addEventListener("submit", function (e) {
-      // console.log(this._locationInput);
-
       e.preventDefault();
-      //   this._locationInput = " ";
 
       const rawData = [...new FormData(this)];
       const data = Object.fromEntries(rawData);
       domEl.searchForm.reset();
       handler(data);
+    });
+  }
+  addHandlerMobileSubmit(handler) {
+    this._mobileSearchForm.addEventListener("submit", function (e) {
+      e.preventDefault();
+
+      const rawData = [...new FormData(this)];
+      const data = Object.fromEntries(rawData);
+      domEl.mobileForm.reset();
+      handler(data);
+      console.log(data);
     });
   }
 
@@ -29,6 +38,20 @@ class SearchView extends View {
     this._data = data;
     const markup = this._generateMarkup();
     this._clear();
+    this._parentElement.insertAdjacentHTML("beforeend", markup);
+  }
+
+  renderMobileSearch(data) {
+    if (!data || (Array.isArray(data) && data.length === 0)) {
+      this._loadMoreBtn.classList.add("hide");
+      domEl.modal.classList.remove("show");
+      return this.renderError();
+    }
+    this._data = data;
+    console.log(this._data);
+    const markup = this._generateMarkup();
+    this._clear();
+    domEl.modal.classList.remove("show");
     this._parentElement.insertAdjacentHTML("beforeend", markup);
   }
 
